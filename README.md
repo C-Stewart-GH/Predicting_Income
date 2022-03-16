@@ -3,7 +3,7 @@
 
 # Predicting_Income
 
-**Contributors: Cameron Stewart, Michael Mazel, Rick Fontenot and Tricia Herrera**
+**Contributors: Cameron Stewart, Michael Mazel, Rick Fontenot, and Tricia Herrera**
 
 >Does marital status affect income? What is the likelihood that a 32-year-old white married male will make more than $50K a year compared to a 59-year-old black divorced female? An individual's income may be influenced by certain factors, and this study examines those factors individually and collectively to determine whether they do have an effect. Using U.S. Census Data, we predict whether an individual will make more or less than $50K a year in the U.S. in 1994. By using each model’s AUC against the test set, we can determine if one model methodology outperforms another in predicting income. The models will select a cutoff that balances accuracy, sensitivity, and specificity.
 
@@ -32,7 +32,7 @@ Some categorical variables such as Occupation had small sample sizes in each cat
 
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/37990637/158544943-fbb9a8d3-9ca3-4563-8bb8-6bfb79176ec4.png">
 
-In the [full report](../main/Final%20Report/Final%20Report.pdf), you can see the team's deep dive into the reationships within and between variables to understand the data.
+In the [full report](../main/Final%20Report/Final%20Report.pdf), you can see the team's deep dive into the relationships within and between variables to understand the data.
 
 [Back to Top](#BackToTop)
 
@@ -53,7 +53,7 @@ We then verified the assumptions of Logistic Regression were reasonable for this
 - For interpretation, explanatory variables should have little to no correlation (Verified with variance inflation factor (VIF) analysis)
 - Model is sensitive to outliers (Verified by visualizing Cook's D and Leverage)
 
-The team provided the interpetations and confidence intervals in the full report.
+The team provided the interpretations and confidence intervals in the full report.
 
 Sample Interpretations:
 - Collar - the odds of earning over $50K for the White-Collar population is expected to be 125.35% higher than the Blue-Collar population
@@ -121,3 +121,4 @@ R Studio
 R version 4.1.2
 
 [Back to Top](#BackToTop)
+![image](https://user-images.githubusercontent.com/37990637/158562633-5018b17b-6bcb-4c14-91a8-bf4332b964e3.png)
