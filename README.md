@@ -110,7 +110,9 @@ Due to the data collection methods being performed observationally, rather than 
 
 [Full Report](../main/Final%20Report/Final%20Report.pdf)
 
+[EDA and Modeling Analysis](../main/Final_EDA_and_Modeling/EDA_and_modeling.pdf)
 
+[Model Performance Summary](../main/Model%20Performance%20Summary)
 
 ##### Technologies:
 
