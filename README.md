@@ -44,7 +44,7 @@ In the [full report](../main/Final%20Report/Final%20Report.pdf), you can see the
 
 Our team set out to create a simplified interpretable model to understand the features that explain whether someone makes over $50K in 1994 in the US. To do this, our team created an 80/20 training and test split of the original data. Next, we used the EDA to guide the initial model creation and refined the model using significance testing and AIC. After selecting a model, we verified the assumptions were met and interpreted the selected predictors.
 
-Our final simplified model includes age, education_num, race, sex, captial_gain, capital_loss, hours_per_week, marriage_status, and collar. Summary of estimates and significance for features of simplified logistic regression model:
+Our final simplified interpretable logistic regression model includes age, education_num, race, sex, captial_gain, capital_loss, hours_per_week, marriage_status, and collar. The model has an AUC of 0.896. Summary of estimates and significance for features of simplified logistic regression model:
 
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/37990637/158546526-65a50d11-f1c4-4d05-a1ee-f5c0e0bba9cb.png">
 
@@ -68,6 +68,24 @@ Sample Interpretations:
 
 ## Create Complex Classification Models
 
+A total of three complex models were built to compete against the simplified logistic regression model. Since the focus has shifted to prediction rather than interpretation, a complex logistic regression model, a quadratic discriminant analysis (QDA) model, and a random forest model were developed.
+
+The complex logistic regression model added interaction terms and considered non-linearity of continuous features. The model is detailed in the full report and has an AUC of 0.902.
+
+When deciding between linear discriminant analysis (LDA) vs. quadratic discriminant analysis (QDA), the team stepped through the assumptions:
+- The predictors of each response category must follow a multivariate normal distribution (Verified with Shaprio-Wilk Test)
+- Constant variance
+- Independence
+- Identical covariance matrices for LDA
+- Each having its own covariance matrix for QDA
+
+To verify our assumption of homogeneity of the covariance matrices, we performed a Box’s M test. The results had a p-value of 2.2e-16, thus we reject the null hypothesis. There is evidence the covariance matrices are not equal across all groups. With this violation, QDA is more appropriate than LDA modeling. The final QDA model had an AUC of 0.825.
+
+Random forest was chosen as an alternative, nonparametric method in predicting income. Unlike regression models, random forest naturally captures polynomial and interaction terms, and thus they need not be included. When inputting variables into a random forest, the only preliminary steps involve transforming categorical types. The model that performed best on our test set was the traditional random forest with quantitative variables and categorical variables handled with caret’s default method. With a mtry of 2, this random forest model produced an AUC of 0.918.
+
+Random forest has the highest AUC, with the complex and simple logistic regression closely behind. The QDA model, having the lowest AUC, then followed. With random forest’s ability to minimize overfitting via ensembling, the model was able to produce the highest AUC and accuracy scores. Random forest also likely benefited from the nonparametric requirement. ROC comparison of all models shown below:
+
+<img width="644" alt="image" src="https://user-images.githubusercontent.com/37990637/158550737-9ce961ea-b205-4000-b1db-928ba9b455a8.png">
 
 
 [Back to Top](#BackToTop)
@@ -78,7 +96,7 @@ Sample Interpretations:
 
 ## Conclusion
 
-
+Due to the data collection methods being performed observationally, rather than experimentally, it should be stressed that all potential relationships identified are correlations not causations. It should also be noted that although the data came from the census, we do not know if the rows provided in the data set are a random sample. As a result, we cannot confidently apply our findings to the entire United States 1994 population. In summary, various models ranging in complexity and interpretability were produced to generate predictions whether this sample of citizens earned more or less than $50k a year.
 
 [Back to Top](#BackToTop)
 
@@ -87,6 +105,10 @@ Sample Interpretations:
 <a name="References"></a>
 
 ## References
+
+[UCI Machine Learning Repository](http://archive.ics.uci.edu/ml)
+
+[Full Report](../main/Final%20Report/Final%20Report.pdf)
 
 
 
