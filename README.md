@@ -32,7 +32,7 @@ Some categorical variables such as Occupation had small sample sizes in each cat
 
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/37990637/158544943-fbb9a8d3-9ca3-4563-8bb8-6bfb79176ec4.png">
 
-The 
+In the [full report](../main/Final%20Report/Final%20Report.pdf), you can see the team's deep dive into the reationships within and between variables to understand the data.
 
 [Back to Top](#BackToTop)
 
@@ -42,6 +42,22 @@ The
 
 ## Create Simple Classification Model
 
+Our team set out to create a simplified interpretable model to understand the features that explain whether someone makes over $50K in 1994 in the US. To do this, our team created an 80/20 training and test split of the original data. Next, we used the EDA to guide the initial model creation and refined the model using significance testing and AIC. After selecting a model, we verified the assumptions were met and interpreted the selected predictors.
+
+Our final simplified model includes age, education_num, race, sex, captial_gain, capital_loss, hours_per_week, marriage_status, and collar. Summary of estimates and significance for features of simplified logistic regression model:
+
+<img width="900" alt="image" src="https://user-images.githubusercontent.com/37990637/158546526-65a50d11-f1c4-4d05-a1ee-f5c0e0bba9cb.png">
+
+We then verified the assumptions of Logistic Regression were reasonable for this model:
+- Observations are independent (Assumed based on data source)
+- For interpretation, explanatory variables should have little to no correlation (Verified with variance inflation factor (VIF) analysis)
+- Model is sensitive to outliers (Verified by visualizing Cook's D and Leverage)
+
+The team provided the interpetations and confidence intervals in the full report.
+
+Sample Interpretations:
+- Collar - the odds of earning over $50K for the White-Collar population is expected to be 125.35% higher than the Blue-Collar population
+- Education_num - for every 1-year increase in education, we expect the odds of earning over $50K to increase by 33.71%
 
 
 [Back to Top](#BackToTop)
