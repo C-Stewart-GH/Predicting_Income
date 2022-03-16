@@ -121,4 +121,3 @@ R Studio
 R version 4.1.2
 
 [Back to Top](#BackToTop)
-![image](https://user-images.githubusercontent.com/37990637/158562633-5018b17b-6bcb-4c14-91a8-bf4332b964e3.png)
